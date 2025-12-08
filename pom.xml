@@ -48,6 +48,26 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+    <plugin>
+      <groupId>org.owasp</groupId>
+      <artifactId>dependency-check-maven</artifactId>
+      <version>9.0.0</version> <!-- use a current version -->
+      <configuration>
+        <format>HTML</format>
+        <failBuildOnCVSS>7.0</failBuildOnCVSS>
+        <skipProvidedScope>true</skipProvidedScope>
+        <!-- Optional: suppression file -->
+        <!-- <suppressionFile>${project.basedir}/dependency-check-suppressions.xml</suppressionFile> -->
+      </configuration>
+      <executions>
+        <execution>
+          <goals>
+            <goal>check</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
 		</plugins>
 	</build>
 
