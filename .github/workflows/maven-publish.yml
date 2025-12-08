@@ -52,6 +52,5 @@ jobs:
         with:
           name: dependency-check-report
           path: |
-            **/dependency-check-report.html
             **/dependency-check-report.json
           if-no-files-found: warn
