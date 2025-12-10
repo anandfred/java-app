@@ -5,7 +5,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 3 * * 1' # Weekly scan
+    - cron: '0 6 * * *' # Weekly scan
 
 jobs:
   build-and-scan:
@@ -29,7 +29,7 @@ jobs:
       - name: OWASP Dependency-Check
         run: |
           mvn -B org.owasp:dependency-check-maven:check \
-            -Dformat=JSON \
+            -Dformat=HTML \
             -DfailBuildOnCVSS=7.0 \
             -DskipProvidedScope=true
 
