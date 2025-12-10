@@ -33,9 +33,9 @@ jobs:
             -DfailBuildOnCVSS=7.0 \
             -DskipProvidedScope=true
 
-      # Upload JSON report
-      - name: Upload Dependency-Check JSON report
+      # Upload HTML report
+      - name: Upload Dependency-Check HTML report
         uses: actions/upload-artifact@v4
         with:
-          name: dependency-check-report-json
-          path: '**/dependency-check-report.json'
+          name: dependency-check-report-html
+          path: '**/dependency-check-report.html'
